@@ -33,7 +33,7 @@ namespace EasyJoyBlog.EF
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseMySql("Server=139.199.106.202;Database=easyjoyblog;Uid=wp;Pwd=a1160651865++;CharSet=utf8");
+                optionsBuilder.UseMySql("Server=******;Database=easyjoyblog;Uid=******;Pwd=******;CharSet=utf8");
             }
         }
 
