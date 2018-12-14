@@ -1,0 +1,55 @@
+﻿
+@{
+    EasyJoyBlog.Models.ArticleDetail Detail = (EasyJoyBlog.Models.ArticleDetail)ViewData["ArticleDetail"];
+    ViewData["Title"] = Detail.Title;
+}
+<article>
+    <h1 class="t_nav">
+        <span>您现在的位置是：首页 > 博文列表 > @Detail.Title</span>
+        <a asp-area="" asp-controller="Home" asp-action="Index" class="n1">网站首页</a>
+        <a asp-area="" asp-controller="ArticleList" asp-action="Index" class="n2">博文列表</a>
+    </h1>
+    <div class="infos">
+        <div class="newsview">
+            <h3 class="news_title">@Detail.Title</h3>
+            <div class="news_author">
+                <span class="au01"><a href="mailto:andywang2048@@gmail.com">@Detail.Author</a></span>
+                <span class="au02">@Detail.Date</span>
+                <span class="au03">
+                    共<b>
+                        <script src=""></script>@Detail.Click
+                    </b>人围观
+                </span>
+            </div>
+            <div class="tags">
+                @foreach (var item in Detail.Tag)
+                {
+                    <a href="/ArticleList/Index?type=@item.Value" target="_blank">@item.Key</a>@:&nbsp;
+                }
+            </div>
+            <div class="news_about"><strong>简介</strong> 这里是简介</div>
+            <div class="news_infos">
+                @Html.Raw(Detail.Content)
+            </div>
+        </div>
+        <div class="share"> </div>
+        <div class="nextinfo">
+            <p>上一篇：<a href="/news/life/2018-03-13/804.html">@Detail.Last</a></p>
+            <p>下一篇：<a href="/news/life/">@Detail.Next</a></p>
+        </div>
+        <div class="otherlink">
+            <h2>相关文章</h2>
+            <ul>
+                <li><a href="/download/div/2018-04-22/815.html" title="html5个人博客模板《黑色格调》">html5个人博客模板《黑色格调》</a></li>
+              
+            </ul>
+        </div>
+        <div class="news_pl">
+            <h2>文章评论</h2>    
+            <ul>
+                <div class="gbko"> </div>
+            </ul>
+        </div>
+    </div>
+    @await Html.PartialAsync("Sidebar")
+</article>

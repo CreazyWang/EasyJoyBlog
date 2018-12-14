@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="gb2312">
+    <title>@ViewData["Title"] - EasyJoy's Blog</title>
+    <meta name="keywords" content="个人博客,简悦个人博客,简悦简历,简悦" />
+    <meta name="description" content="简悦个人博客，是一个分享技术、记录生活的地方。" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://easy-joy-blog-1255440280.cos.ap-shanghai.myqcloud.com/css/base.css" rel="stylesheet">
+    <link href="https://easy-joy-blog-1255440280.cos.ap-shanghai.myqcloud.com/css/index.css" rel="stylesheet">
+    <link href="https://easy-joy-blog-1255440280.cos.ap-shanghai.myqcloud.com/css/m.css" rel="stylesheet">
+    <link href="https://easy-joy-blog-1255440280.cos.ap-shanghai.myqcloud.com/lib/flexText/dist/comment.css" rel="stylesheet" />
+    <link href="https://easy-joy-blog-1255440280.cos.ap-shanghai.myqcloud.com/lib/flexText/dist/style.css" rel="stylesheet" />
+    <script src="https://easy-joy-blog-1255440280.cos.ap-shanghai.myqcloud.com/lib/jquery/dist/jquery.js"></script>
+    <script src="https://easy-joy-blog-1255440280.cos.ap-shanghai.myqcloud.com/lib/layer/layer.js"></script>
+    <script src="https://easy-joy-blog-1255440280.cos.ap-shanghai.myqcloud.com/js/page.js"></script>
+    <script src="https://easy-joy-blog-1255440280.cos.ap-shanghai.myqcloud.com/lib/flexText/dist/jquery.flexText.js"></script>
+    <script src="https://easy-joy-blog-1255440280.cos.ap-shanghai.myqcloud.com/js/app.js"></script>
+    <script>
+        window.onload = function () {
+            var oH2 = document.getElementsByTagName("h2")[0];
+            var oUl = document.getElementsByTagName("ul")[0];
+            oH2.onclick = function () {
+                var style = oUl.style;
+                style.display = style.display == "block" ? "none" : "block";
+                oH2.className = style.display == "block" ? "open" : ""
+            }
+        }
+    </script>
+</head>
+<body data-type="@ViewData["PageType"]">
+    <header>
+        <div class="tophead">
+            <div class="logo"><a href="/">EasyJoy's Blog</a></div>
+            <div id="mnav">
+                <h2><span class="navicon"></span></h2>
+                <ul>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li><a asp-area="" asp-controller="Resume" asp-action="Index">Resume</a></li>
+                    <li><a asp-area="" asp-controller="ArticleList" asp-action="Index">ArticleList</a></li>
+                    <li><a asp-area="" asp-controller="Message" asp-action="Index">Message</a></li> 
+                </ul>
+            </div> 
+            <nav class="topnav" id="topnav">
+                <ul>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li><a asp-area="" asp-controller="Resume" asp-action="Index">Resume</a></li>
+                    <li><a asp-area="" asp-controller="ArticleList" asp-action="Index">ArticleList</a></li>
+                    <li><a asp-area="" asp-controller="Message" asp-action="Index">Message</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    @RenderBody() 
+    <footer>
+        <p>Coding by <a href="/">EasyJoy's Blog</a> <a href="/">鲁ICP备18026596号-1</a></p>
+    </footer>
+    <script src="~/js/nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+﻿
+@{
+    ViewData["Title"] = "Message";
+}
+
+<article>
+    <h1 class="t_nav">
+        <span>你愿与我一路同行，我将为你背负行囊！</span>
+        <a asp-area="" asp-controller="Home" asp-action="Index" class="n1">网站首页</a>
+        <a asp-area="" asp-controller="Message" asp-action="Index" class="n2">留言</a>
+    </h1>
+    <div class="ab_box">
+        <div class="news_infos"> 如果您有任何问题，欢迎与我交流！ </div>
+        <div class="leftbox">
+            <div class="commentAll">
+                <!--评论区域 begin-->
+                <div class="reviewArea clearfix">
+                    <input type="text" id="author" style="width:200px;margin:10px 0px;" placeholder="请输入您的昵称&hellip;" onkeyup="keyUP(this)" />
+                    <input type="text" id="author_email" style="width:200px;margin:10px;" placeholder="请输入您的联系方式&hellip;" onkeyup="keyUP(this)" />
+                    <textarea class="content comment-input" placeholder="请输入您的留言&hellip;" onkeyup="keyUP(this)"></textarea>
+                    <a href="javascript:;" class="plBtn">评论</a>
+                </div>
+                <!--评论区域 end-->
+                <!--回复区域 begin-->
+                @*<div class="comment-show"></div>*@
+                <!--回复区域 end-->
+                <div class="pageBox">
+                    <div class="comment-show pageDiv clearfix"> 
+                    </div>
+                    <div class="notContent hide">
+                        无数据
+                    </div>
+                    <div class="page">
+                        <ul class="pageMenu clearfix">
+                            <li class="firstPage">首页</li>
+                            <li class="prevPage"> < </li>
+                            <div class="pageObj clearfix"> 
+                            </div>
+                            <li class="nextPage"> > </li>
+                            <li class="lastPage">尾页</li>
+                            <li class="last" style="font-size: 14px;">
+                                共<span class="totalPage"></span>页，跳转至 <input type="number" class="keuInput" value="1">
+                                <button type="button" class="btnSure">确定</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="rightbox">
+            <div class="aboutme">
+                <h2 class="hometitle">关于我</h2>
+                <div class="avatar"> <img src="~/images/head.jpg"> </div>
+                <div class="ab_con">
+                    <p>网名：AndyWang | 王鹏</p>
+                    <p>职业：Programmer、Development Engineer</p>
+                    <p>个人微信：xiaoyi668</p>
+                    <p>邮箱：andywang2048@gmail.com</p>
+                </div>
+            </div>
+            <div class="weixin">
+                <h2 class="hometitle">微信关注</h2>
+                <ul>
+                    <img src="images/wx.png" />
+                </ul>
+            </div>
+        </div>
+    </div>
+</article>

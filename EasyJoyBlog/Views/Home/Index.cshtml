@@ -1,0 +1,106 @@
+﻿@model List<EasyJoyBlog.Models.BlogArticle>
+@{
+    ViewData["Title"] = "Home";
+}
+<div class="picshow">
+    <ul>
+        <li>
+            <a href="/">
+                <i><img src="https://easy-joy-blog-1255440280.cos.ap-shanghai.myqcloud.com/images/b1.jpg"></i>
+                <div class="font">
+                    <h3>EasyJoy's Blog</h3>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="/">
+                <i><img src="https://easy-joy-blog-1255440280.cos.ap-shanghai.myqcloud.com/images/b2.jpg"></i>
+                <div class="font">
+                    <h3>EasyJoy's Blog</h3>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="/">
+                <i><img src="https://easy-joy-blog-1255440280.cos.ap-shanghai.myqcloud.com/images/b3.jpg"></i>
+                <div class="font">
+                    <h3>EasyJoy's Blog</h3>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="/">
+                <i><img src="https://easy-joy-blog-1255440280.cos.ap-shanghai.myqcloud.com/images/b4.jpg"></i>
+                <div class="font">
+                    <h3>EasyJoy's Blog</h3>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="/">
+                <i><img src="https://easy-joy-blog-1255440280.cos.ap-shanghai.myqcloud.com/images/b5.jpg"></i>
+                <div class="font">
+                    <h3>EasyJoy's Blog</h3>
+                </div>
+            </a>
+        </li>
+    </ul>
+</div>
+<article>
+    <div class="blogs">
+        @foreach (var item in Model)
+        {
+            <li>
+                <span class="blogpic"><a href="/ArticleList/Detail?id=@item.Link"><img src="@item.Img"></a></span>
+                <h3 class="blogtitle"><a href="/ArticleList/Detail?id=@item.Link">@item.Title</a></h3>
+                <div class="bloginfo">
+                    <p>@item.BlogInfo...</p>
+                </div>
+                <div class="autor">
+                    <span class="lm">
+                        @foreach (var j in item.ClassName)
+                        {
+                            <a href="/ArticleList/Index?type=@j.Value" title="@j.Key" target="_blank" class="classname">@j.Key</a>@:&nbsp;&nbsp;
+                        }
+                    </span>
+                    <span class="dtime">@item.DTime</span>
+                    <span class="viewnum">浏览（<a href="/">@item.ViewNum</a>）</span>
+                    <span class="readmore"><a href="/ArticleList/Detail?id=@item.Link">阅读原文</a></span>
+                </div>
+            </li>
+        }
+    </div>
+    <div class="sidebar">
+        <div class="about">
+            <div class="avatar"> <img src="images/head.jpg" alt=""> </div>
+            <p class="abname">AndyWang | 王鹏</p>
+            <p class="abposition">Programmer、Development Engineer </p>
+            <div class="abtext">90后，喜爱编程、硬件开发，乐于折腾的。相信技术能够改变世界。博客主要分享个人的技术积累，以及学习笔记。</div>
+        </div>
+  
+        <div class="cloud">
+            <h2 class="hometitle">Tag Clouds</h2>
+            <ul>
+                <a href="/ArticleList/Index?type=bigdata">BigData</a>
+                <a href="/ArticleList/Index?type=bigdata">asp-net-core</a>
+                <a href="/ArticleList/Index?type=android">Android</a>
+                <a href="/ArticleList/Index?type=soft-test">软件测试</a>
+                <a href="/ArticleList/Index?type=dataview">数据可视化</a>
+            </ul>
+        </div>
+      
+        <div class="links">
+            <h2 class="hometitle">Friendly Links</h2>
+            <ul>
+                <li><a href="http://www.jy500.cn" title="简悦简历">简悦简历</a></li>
+            </ul>
+        </div>
+        <div class="weixin">
+            <h2 class="hometitle">WeChat</h2>
+            <ul>
+                <img src="images/wx.png">
+            </ul>
+        </div>
+    </div>
+</article>
+<div class="blank"></div>

@@ -1,0 +1,40 @@
+﻿@{
+    List<EasyJoyBlog.EF.EjbTerms> Terms = (List<EasyJoyBlog.EF.EjbTerms>)ViewData["Terms"];
+}
+<div class="sidebar">
+    <div class="search">
+        <form action="/e/search/index.php" method="post" name="searchform" id="searchform">
+            <input name="keyboard" id="keyboard" class="input_text" value="请输入关键字" style="color: rgb(153, 153, 153);" onfocus="if(value=='请输入关键字'){this.style.color='#000';value=''}" onblur="if(value==''){this.style.color='#999';value='请输入关键字'}" type="text">
+            <input name="show" value="title" type="hidden">
+            <input name="tempid" value="1" type="hidden">
+            <input name="tbname" value="news" type="hidden">
+            <input name="Submit" class="input_submit" value="搜索" type="submit">
+        </form>
+    </div>
+    <div class="lmnav">
+        <h2 class="hometitle">栏目导航</h2>
+        <ul class="navbor">
+            @foreach (var item in Terms)
+            {
+                <li><a class="blogtype" data-slug="@item.Slug" href="javascript:void(0);">@item.Name</a></li>
+            }
+        </ul>
+    </div> 
+    <div class="cloud">
+        <h2 class="hometitle">标签云</h2>
+        <ul>
+            <a href="/ArticleList/Index?type=bigdata">BigData</a>
+            <a href="/ArticleList/Index?type=bigdata">asp-net-core</a>
+            <a href="/ArticleList/Index?type=android">Android</a>
+            <a href="/ArticleList/Index?type=soft-test">软件测试</a>
+            <a href="/ArticleList/Index?type=dataview">数据可视化</a>
+        </ul>
+    </div>
+    
+    <div class="weixin">
+        <h2 class="hometitle">官方微信</h2>
+        <ul>
+            <img src="~/images/wx.png">
+        </ul>
+    </div>
+</div>

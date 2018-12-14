@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewData["Title"] = "ArticleList";
+}
+
+<article>
+    <h1 class="t_nav">
+        <span>
+            不要轻易放弃。学习成长的路上，我们长路漫漫，只因学无止境。
+        </span>
+        <a asp-area="" asp-controller="Home" asp-action="Index" class="n1">网站首页</a>
+        <a asp-area="" asp-controller="ArticleList" asp-action="Index" class="n2">博文列表</a> 
+        <input type="text" hidden id="blogtype"  value="@ViewData["blogtype"]"/>
+     </h1>
+    <div class="pageBox blogs">
+        <div class="comment-show pageDiv clearfix">
+            <div class="mt20"></div>
+        </div>
+        <div class="notContent hide">
+            <div class="mt20"></div>
+            无数据
+        </div>
+        <div class="page">
+            <ul class="pageMenu clearfix">
+                <li class="firstPage">首页</li>
+                <li class="prevPage"> < </li>
+                <div class="pageObj clearfix">
+                </div>
+                <li class="nextPage"> > </li>
+                <li class="lastPage">尾页</li>
+                <li class="last" style="font-size: 14px;">
+                    共<span class="totalPage"></span>页，跳转至 <input type="number" class="keuInput" value="1">
+                    <button type="button" class="btnSure">确定</button>
+                </li>
+            </ul>
+        </div>
+    </div>  
+        @await Html.PartialAsync("Sidebar")  
+</article>
+
