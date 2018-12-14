@@ -8,8 +8,8 @@ namespace EasyJoyBlog.EF
 {
     public class DataBaseContextConfig
     {
-        private const string EasyJoyBlogConnectionString = "server=139.199.106.202;userid=wp;pwd=a1160651865++;port=3306;database=EasyJoyBlog;";
-        private const string LogConnectionString = "server=139.199.106.202;userid=wp;pwd=a1160651865++;port=3306;database=log;";
+        private const string EasyJoyBlogConnectionString = "server=******;userid=******;pwd=******;port=3306;database=EasyJoyBlog;";
+        private const string LogConnectionString = "server=******;userid=******;pwd=******;port=3306;database=log;";
         /// <summary>
         /// 创建EasyJoyBlog数据库上下文
         /// </summary>
